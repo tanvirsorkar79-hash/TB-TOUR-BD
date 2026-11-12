@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>TB TOUR BD - প্রিমিয়াম গেমিং প্ল্যাটফর্ম</title>
+    
+    <!-- Favicon (Placeholder) -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        /* WHITE THEME VARIABLES — Clean, modern, bright */
+        :root {
+            --bg-gradient-start: #f8fafc;
+            --bg-gradient-end: #eef2ff;
+            --card-bg: #ffffff;
+            --card-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --primary-blue: #2563eb;
+            --primary-dark: #1e40af;
+            --glow-blue: #3b82f6;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #475569;
+            --card-1-color: #2563eb;
+            --card-2-color: #059669;
+            --card-3-color: #7c3aed;
+            --card-4-color: #ea580c;
+            --red-accent: #dc2626;
+            --yellow-accent: #eab308;
+            --whatsapp-color: #25D366;
+            --facebook-color: #1877f2;
+            --telegram-color: #0088cc;
+            --border-light: #e2e8f0;
+            --soft-gray: #f1f5f9;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 20px 40px;
+        }
+
+        /* Subtle background pattern (light version) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" fill="transparent"/><circle cx="20" cy="20" r="4" fill="%233b82f6" opacity="0.08"/><circle cx="80" cy="40" r="3" fill="%2310b981" opacity="0.08"/><circle cx="40" cy="80" r="5" fill="%23a855f7" opacity="0.08"/><circle cx="70" cy="70" r="2" fill="%23f97316" opacity="0.08"/></svg>');
+            background-repeat: repeat;
+            background-size: 80px 80px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .header, .stats-grid, .features-section, .community-section {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header & logo */
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 32px;
+        }
+
+        .logo-box {
+            width: 110px;
+            height: 110px;
+            background: white;
+            border-radius: 32px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+        .logo-box:hover { transform: scale(1.02); }
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .subtitle-sm {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .main-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 15px;
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+        }
+        .tagline span { opacity: 0.7; }
+
+        /* Download button - white theme with vibrant blue */
+        .download-btn {
+            background: linear-gradient(95deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-size: 17px;
+            font-weight: 700;
+            width: 100%;
+            max-width: 340px;
+            margin: 28px auto 16px;
+            cursor: pointer;
+            box-shadow: 0 12px 24px -10px rgba(37, 99, 235, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.25s;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+        }
+        .download-btn:active { transform: scale(0.97); box-shadow: 0 6px 14px -8px #1e40af; }
+        .download-btn i { font-size: 18px; }
+
+        /* Stats grid (cards) */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 420px;
+            margin-bottom: 30px;
+        }
+
+        /* modern white cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 20px 12px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(0px);
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.12); }
+
+        .icon-bg {
+            width: 56px;
+            height: 56px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 14px;
+            transition: all 0.2s;
+        }
+        .card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+        .card p {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .card-1 .icon-bg { background: #eff6ff; color: var(--card-1-color); }
+        .card-2 .icon-bg { background: #ecfdf5; color: var(--card-2-color); }
+        .card-3 .icon-bg { background: #f5f3ff; color: var(--card-3-color); }
+        .card-4 .icon-bg { background: #fff7ed; color: var(--card-4-color); }
+
+        /* Features section */
+        .features-section { 
+            width: 100%; 
+            max-width: 450px; 
+            padding: 0 0 40px; 
+        }
+
+        .features-header { 
+            text-align: center; 
+            margin-top: 20px;
+            margin-bottom: 32px; 
+        }
+        .features-header h2 { 
+            font-size: 26px; 
+            font-weight: 800; 
+            margin-bottom: 12px; 
+            color: #0f172a;
+        }
+        .features-header p { 
+            color: var(--text-secondary); 
+            font-size: 15px; 
+            font-weight: 500; 
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 28px 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-light);
+            text-align: left;
+            transition: all 0.2s;
+        }
+        .feature-card:hover { transform: translateY(-3px); box-shadow: 0 20px 30px -14px rgba(0, 0, 0, 0.1); }
+
+        .feature-card .icon-large {
+            width: 64px; 
+            height: 64px; 
+            border-radius: 24px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 28px; 
+            margin-bottom: 20px; 
+        }
+
+        .feature-card h3 { 
+            font-size: 20px; 
+            font-weight: 700; 
+            margin-bottom: 8px; 
+            color: #0f172a;
+        }
+        .feature-card p { 
+            color: var(--text-muted); 
+            font-size: 14px; 
+            line-height: 1.45;
+            font-weight: 500;
+        }
+
+        .card-deposit .icon-large { background: #fef2f2; color: var(--red-accent); }
+        .card-withdraw .icon-large { background: #ecfdf5; color: var(--card-2-color); }
+        .card-secure .icon-large { background: #eff6ff; color: var(--card-1-color); }
+        .card-rewards .icon-large { background: #fefce8; color: #ca8a04; }
+
+        .final-cta-text { 
+            font-size: 20px; 
+            font-weight: 700; 
+            margin: 28px 0 16px; 
+            text-align: center; 
+            color: #0f172a;
+        }
+        .final-cta-btn {
+            background: linear-gradient(95deg, #2563eb, #1e40af);
+            padding: 16px 0;
+            border-radius: 48px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 15px 30px -12px #1e40af70;
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: 0.2s;
+            border: none;
+            margin: 0 auto;
+        }
+        .final-cta-btn:active { transform: scale(0.97); }
+
+        /* Community section - white theme */
+        .community-section {
+            width: 100%;
+            max-width: 460px;
+            padding: 40px 16px 30px;
+            text-align: center;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 56px;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+        }
+
+        .community-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 28px;
+            color: #0f172a;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+        .social-link:hover { transform: translateY(-5px); }
+
+        .social-link i {
+            font-size: 28px;
+            width: 64px;
+            height: 64px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+        .social-link span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .whatsapp-icon { color: var(--whatsapp-color); background: white; border: 1px solid #e2e8f0; }
+        .facebook-icon { color: var(--facebook-color); background: white; border: 1px solid #e2e8f0; }
+        .telegram-icon { color: var(--telegram-color); background: white; border: 1px solid #e2e8f0; }
+
+        /* footer area */
+        .footer-logo-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .footer-logo-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .footer-logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .app-name {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(120deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-contact {
+            margin: 20px 0 20px;
+            padding: 24px 20px;
+            background: white;
+            border-radius: 36px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-light);
+        }
+
+        .developer-badge {
+            display: inline-block;
+            background: #eef2ff;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .contact-item i {
+            color: #2563eb;
+            width: 24px;
+            font-size: 16px;
+        }
+        .contact-item a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .contact-item a:hover { color: #2563eb; }
+
+        .copyright-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-light);
+        }
+        .copyright-text a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+
+        /* ===== Extra sections / buttons ===== */
+        .website-btn {
+            background: #ffffff;
+            color: #1e40af;
+            border: 2px solid #2563eb;
+            padding: 13px 28px;
+            border-radius: 60px;
+            font-size: 17px;
+            font-weight: 700;
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto 28px;
+            cursor: pointer;
+            box-shadow: 0 10px 22px -12px rgba(37,99,235,.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all .25s ease;
+            text-decoration: none;
+        }
+        .website-btn:hover { background:#eff6ff; transform:translateY(-2px); }
+        .website-btn:active { transform:scale(.97); }
+
+        .quick-links {
+            width:100%;
+            max-width:450px;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+            margin: 0 auto 34px;
+            position:relative;
+            z-index:2;
+        }
+        .quick-link {
+            background:#fff;
+            border:1px solid var(--border-light);
+            border-radius:20px;
+            padding:15px 10px;
+            text-decoration:none;
+            color:var(--text-primary);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:9px;
+            font-weight:700;
+            box-shadow:0 8px 20px rgba(15,23,42,.05);
+            transition:.2s ease;
+        }
+        .quick-link i { color:#2563eb; font-size:18px; }
+        .quick-link:hover { transform:translateY(-2px); }
+
+        .trust-strip {
+            width:100%;
+            max-width:450px;
+            background:linear-gradient(135deg,#ffffff,#f8fbff);
+            border:1px solid var(--border-light);
+            border-radius:26px;
+            padding:20px 16px;
+            margin:0 auto 32px;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:8px;
+            text-align:center;
+            position:relative;
+            z-index:2;
+            box-shadow:var(--card-shadow);
+        }
+        .trust-item i { font-size:22px; color:#2563eb; margin-bottom:7px; }
+        .trust-item strong { display:block; font-size:13px; }
+        .trust-item span { display:block; font-size:11px; color:var(--text-muted); margin-top:2px; }
+
+        .extra-section {
+            width:100%;
+            max-width:450px;
+            margin:0 auto 38px;
+            position:relative;
+            z-index:2;
+        }
+        .extra-heading {
+            text-align:center;
+            margin-bottom:20px;
+        }
+        .extra-heading h2 {
+            font-size:25px;
+            color:#0f172a;
+            margin-bottom:6px;
+            font-weight:800;
+        }
+        .extra-heading p {
+            font-size:14px;
+            color:var(--text-muted);
+            font-weight:500;
+        }
+
+        .benefit-grid {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:14px;
+        }
+        .benefit-card {
+            background:#fff;
+            border:1px solid var(--border-light);
+            border-radius:24px;
+            padding:20px 16px;
+            box-shadow:var(--card-shadow);
+            text-align:center;
+        }
+        .benefit-card .benefit-icon {
+            width:52px;
+            height:52px;
+            border-radius:18px;
+            margin:0 auto 12px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#eff6ff;
+            color:#2563eb;
+            font-size:22px;
+        }
+        .benefit-card h3 { font-size:16px; margin-bottom:5px; }
+        .benefit-card p { font-size:12px; color:var(--text-muted); line-height:1.5; }
+
+        .steps {
+            display:grid;
+            gap:12px;
+        }
+        .step-item {
+            background:#fff;
+            border:1px solid var(--border-light);
+            border-radius:22px;
+            padding:16px;
+            display:flex;
+            align-items:center;
+            gap:14px;
+            box-shadow:0 8px 18px rgba(15,23,42,.04);
+        }
+        .step-number {
+            min-width:42px;
+            width:42px;
+            height:42px;
+            border-radius:50%;
+            background:#2563eb;
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:800;
+        }
+        .step-item h3 { font-size:16px; margin-bottom:3px; }
+        .step-item p { font-size:12px; color:var(--text-muted); line-height:1.45; }
+
+        .faq-list { display:grid; gap:10px; }
+        .faq-item {
+            background:#fff;
+            border:1px solid var(--border-light);
+            border-radius:18px;
+            overflow:hidden;
+            box-shadow:0 6px 16px rgba(15,23,42,.04);
+        }
+        .faq-question {
+            width:100%;
+            border:0;
+            background:#fff;
+            padding:16px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            text-align:left;
+            font:inherit;
+            font-weight:700;
+            color:var(--text-primary);
+            cursor:pointer;
+        }
+        .faq-question i { color:#2563eb; transition:.2s; }
+        .faq-answer {
+            display:none;
+            padding:0 16px 16px;
+            color:var(--text-muted);
+            font-size:13px;
+            line-height:1.6;
+        }
+        .faq-item.open .faq-answer { display:block; }
+        .faq-item.open .faq-question i { transform:rotate(180deg); }
+
+        .community-section {
+            width:100%;
+            max-width:460px;
+            padding:40px 16px 30px;
+            text-align:center;
+            background:rgba(255,255,255,.75);
+            backdrop-filter:blur(8px);
+            border-radius:56px;
+            margin:15px auto 0;
+            box-shadow:0 8px 20px rgba(0,0,0,.02);
+            position:relative;
+            z-index:2;
+        }
+
+        .footer-actions {
+            display:grid;
+            gap:11px;
+            margin:20px auto 26px;
+            max-width:380px;
+        }
+        .footer-action {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            padding:13px 16px;
+            border-radius:18px;
+            text-decoration:none;
+            font-weight:700;
+            border:1px solid var(--border-light);
+            background:#fff;
+            color:var(--text-primary);
+        }
+        .footer-action.primary {
+            background:linear-gradient(95deg,#2563eb,#1e40af);
+            color:#fff;
+            border:0;
+        }
+
+        .ripple-wrap { position:relative; overflow:hidden; }
+        .ripple {
+            position:absolute;
+            border-radius:50%;
+            background:rgba(255,255,255,.45);
+            transform:scale(0);
+            animation:ripple-effect .5s ease-out;
+            pointer-events:none;
+        }
+        @keyframes ripple-effect {
+            to { transform:scale(2); opacity:0; }
+        }
+
+        @media (max-width:480px) {
+            .quick-links { gap:9px; }
+            .trust-strip { padding:18px 8px; }
+            .benefit-grid { gap:10px; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 16px 16px 32px; }
+            .main-title { font-size: 24px; }
+            .stats-grid { gap: 14px; }
+            .card h3 { font-size: 20px; }
+            .feature-card { padding: 22px 18px; }
+            .community-section { padding: 30px 12px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-box">
+            <!-- Logo placeholder – same logo.png used -->
+            <img src="https://i.ibb.co.com/pvL9xMCb/6987cb20-f7b9-446d-a73a-474bcfd547a8.png">
+        </div>
+        <p class="subtitle-sm">বাংলাদেশের #১ ট্রাস্টেড প্ল্যাটফর্ম</p>
+        <h1 class="main-title">TB TOUR BD</h1>
+        <div class="tagline">
+            <span>🎮 খেলুন</span> • <span>🏆 জিতুন</span> • <span>⚡ উপভোগ করুন</span>
+        </div>
+        
+        <!-- Direct APK download link (kept original) -->
+        <a href="https://rhesports.fun/TB TOUR BD.apk" class="download-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-download"></i> অ্যাপ ডাউনলোড করুন (APK)
+        </a>
+        <a href="https://rhesports.fun/" class="website-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-globe"></i> ওয়েবসাইট ভিজিট করুন
+        </a>
+    </header>
+
+    <!-- Stats cards - light version with white glassmorphism -->
+    <div class="stats-grid">
+        <div class="card card-1">
+            <div class="icon-bg">
+                <i class="fa-solid fa-download"></i>
+            </div>
+            <h3>৩০K+</h3>
+            <p>সফল ডাউনলোড</p>
+        </div>
+        <div class="card card-2">
+            <div class="icon-bg">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>১০K+</h3>
+            <p>সক্রিয় খেলোয়াড়</p>
+        </div>
+        <div class="card card-3">
+            <div class="icon-bg">
+                <i class="fa-regular fa-clock"></i>
+            </div>
+            <h3>২৪/৭</h3>
+            <p>সাপোর্ট টিম</p>
+        </div>
+        <div class="card card-4">
+            <div class="icon-bg">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <h3>৬+</h3>
+            <p>এক্সক্লুসিভ গেম</p>
+        </div>
+    </div>
+
+    <div class="quick-links">
+        <a class="quick-link" href="https://rhesports.fun/TB TOUR BD.apk" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-mobile-screen-button"></i> অ্যাপ ডাউনলোড
+        </a>
+        <a class="quick-link" href="https://rhesports.fun/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-globe"></i> ওয়েবসাইট
+        </a>
+    </div>
+
+    <div class="trust-strip">
+        <div class="trust-item">
+            <i class="fa-solid fa-bolt"></i>
+            <strong>দ্রুত</strong>
+            <span>সহজ ব্যবহার</span>
+        </div>
+        <div class="trust-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <strong>সুরক্ষিত</strong>
+            <span>নিরাপদ অভিজ্ঞতা</span>
+        </div>
+        <div class="trust-item">
+            <i class="fa-solid fa-gamepad"></i>
+            <strong>গেমিং</strong>
+            <span>এক প্ল্যাটফর্মে</span>
+        </div>
+    </div>
+
+
+    <section class="extra-section">
+        <div class="extra-heading">
+            <h2>🔥 প্ল্যাটফর্মের বিশেষ সুবিধা</h2>
+            <p>খেলা, ডিপোজিট ও উইথড্র—সবকিছু সহজভাবে</p>
+        </div>
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fa-solid fa-gamepad"></i></div>
+                <h3>এক্সক্লুসিভ গেম</h3>
+                <p>একাধিক গেমিং অভিজ্ঞতা এক জায়গায়।</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fa-solid fa-wallet"></i></div>
+                <h3>সহজ লেনদেন</h3>
+                <p>ডিপোজিট ও উইথড্র প্রক্রিয়া সহজভাবে ব্যবহার করুন।</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fa-solid fa-medal"></i></div>
+                <h3>রিওয়ার্ড</h3>
+                <p>গেমিংয়ের সঙ্গে রিওয়ার্ড ও বোনাসের সুবিধা।</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>সাপোর্ট</h3>
+                <p>প্রয়োজনে প্ল্যাটফর্মের সাপোর্ট সুবিধা ব্যবহার করুন।</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="extra-section">
+        <div class="extra-heading">
+            <h2>🚀 কীভাবে শুরু করবেন?</h2>
+            <p>মাত্র কয়েকটি ধাপেই শুরু করুন</p>
+        </div>
+        <div class="steps">
+            <div class="step-item">
+                <div class="step-number">১</div>
+                <div>
+                    <h3>অ্যাপ ডাউনলোড করুন</h3>
+                    <p>উপরের APK Download বাটনে চাপ দিয়ে অ্যাপ নিন।</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">২</div>
+                <div>
+                    <h3>অ্যাপ ওপেন করুন</h3>
+                    <p>অ্যাপ চালু করে আপনার প্রয়োজনীয় অপশন ব্যবহার করুন।</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">৩</div>
+                <div>
+                    <h3>গেমিং শুরু করুন</h3>
+                    <p>পছন্দের গেম ও উপলভ্য ম্যাচ থেকে খেলুন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="extra-section">
+        <div class="extra-heading">
+            <h2>❓ সাধারণ প্রশ্ন</h2>
+            <p>দ্রুত প্রয়োজনীয় তথ্য দেখুন</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    <span>অ্যাপ কোথা থেকে ডাউনলোড করব?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">এই পেজের “অ্যাপ ডাউনলোড করুন (APK)” অথবা “অ্যাপ ডাউনলোড” বাটনে চাপ দিন।</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    <span>ওয়েবসাইটে কীভাবে যাব?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">“ওয়েবসাইট ভিজিট করুন” বা “ওয়েবসাইট” বাটনে চাপ দিলেই অফিসিয়াল ওয়েবসাইট খুলবে।</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    <span>ডিপোজিট ও উইথড্র সুবিধা আছে?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">পেজে ডিপোজিট ও উইথড্র—দুই ধরনের সুবিধাই প্ল্যাটফর্মের ফিচার হিসেবে দেখানো হয়েছে।</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-header">
+            <h2>✨ কেন বেছে নেবেন আমাদের?</h2>
+            <p>বিশ্বস্ত, দ্রুত ও নিরাপদ গেমিং ইকোসিস্টেম</p>
+        </div>
+        
+        <div class="feature-card card-deposit">
+            <div class="icon-large">
+                <i class="fa-regular fa-credit-card"></i>
+            </div>
+            <h3>তাত্ক্ষণিক ডিপোজিট</h3>
+            <p>যেকোনো সময় টাকা জমা দিন এবং সাথে সাথে খেলা শুরু করুন। সহজ পেমেন্ট গেটওয়ে।</p>
+        </div>
+        
+        <div class="feature-card card-withdraw">
+            <div class="icon-large">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <h3>ইনস্ট্যান্ট উইথড্র</h3>
+            <p>জয়ের টাকা যেকোনো সময় তুলে নিন। দেরি নেই, কোনো জটিলতা নেই।</p>
+        </div>
+        
+        <div class="feature-card card-secure">
+            <div class="icon-large">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>১০০% নিরাপদ ও এনক্রিপ্টেড</h3>
+            <p>আপনার তথ্য ও লেনদেন সম্পূর্ণ সুরক্ষিত। বিশ্বস্ত প্ল্যাটফর্ম হিসেবে পরিচিত।</p>
+        </div>
+        
+        <div class="feature-card card-rewards">
+            <div class="icon-large">
+                <i class="fa-solid fa-medal"></i>
+            </div>
+            <h3>সেরা রিওয়ার্ড ও বোনাস</h3>
+            <p>প্রতিটি খেলায় আনলিমিটেড বোনাস, ক্যাশব্যাক ও লoyalty পুরস্কার।</p>
+        </div>
+
+        <p class="final-cta-text">🚀 এখনই অ্যাপ ডাউনলোড করে খেলা শুরু করুন!</p>
+        
+        <a href="https://rhesports.fun/TB TOUR BD.apk" class="final-cta-btn" target="_blank">
+            <i class="fa-solid fa-download"></i> ডাউনলোড TB TOUR BD
+        </a>
+    </section>
+
+    <section class="community-section">
+        <div class="footer-logo-info">
+            <div class="footer-logo-box">
+                <img src="https://i.ibb.co.com/pvL9xMCb/6987cb20-f7b9-446d-a73a-474bcfd547a8.png">
+            </div>
+            <span class="app-name">TB TOUR BD</span>
+        </div>
+
+        <div class="footer-actions">
+            <a class="footer-action primary" href="https://rhesports.fun/TB TOUR BD.apk" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-download"></i> অ্যাপ ডাউনলোড করুন
+            </a>
+            <a class="footer-action" href="https://rhesports.fun/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-globe"></i> অফিসিয়াল ওয়েবসাইট
+            </a>
+            <a class="footer-action" href="https://rhesports.fun/developer.html" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-code"></i> Developer Info
+            </a>
+        </div>
+
+        <div class="footer-contact">
+            <span class="developer-badge">TB TOUR BD PLATFORM</span>
+            <div class="contact-item">
+                <i class="fa-solid fa-globe"></i>
+                <a href="https://rhesports.fun/" target="_blank" rel="noopener noreferrer">TB TOUR BD</a>
+            </div>
+            <p class="copyright-text">
+                © 2026 TB TOUR BD | Developed <br>
+                By <a href="https://rhesports.fun/developer.html" target="_blank" rel="noopener noreferrer">DEV TB TOUR BD</a>
+            </p>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Smooth FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const item = this.closest('.faq-item');
+                document.querySelectorAll('.faq-item.open').forEach(function (other) {
+                    if (other !== item) other.classList.remove('open');
+                });
+                item.classList.toggle('open');
+            });
+        });
+
+        // Safe scroll animation for the actual elements on this page.
+        const animated = document.querySelectorAll(
+            '.card, .feature-card, .benefit-card, .step-item, .trust-strip, .quick-link, .faq-item'
+        );
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08 });
+
+            animated.forEach(function (el) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(18px)';
+                el.style.transition = 'opacity .5s ease, transform .5s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Ripple effect without changing any link destination.
+        document.querySelectorAll('.download-btn, .website-btn, .footer-action').forEach(function (button) {
+            button.classList.add('ripple-wrap');
+            button.addEventListener('click', function (event) {
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple';
+                ripple.style.width = size + 'px';
+                ripple.style.height = size + 'px';
+                ripple.style.left = (event.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (event.clientY - rect.top - size / 2) + 'px';
+                this.appendChild(ripple);
+                setTimeout(function () { ripple.remove(); }, 500);
+            });
+        });
+    });
+    </script>
+</body>
+</html>
